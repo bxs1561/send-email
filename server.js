@@ -7,6 +7,7 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 9000;
 
+
 //views engine middleware
 app.engine('handlebars', expressHandlebars());
 app.set('view engine', 'handlebars');
@@ -17,6 +18,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 //body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 app.get('/', (req, res) => {
     //contact form
@@ -37,7 +39,7 @@ app.post("/send",(req,res)=>{
 <li>Phone: ${req.body.phone}</li>
 </ul>
 <h3>Message</h3>
-${req.body.message}`
+${req.body.message}`;
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         service: 'gmail',
