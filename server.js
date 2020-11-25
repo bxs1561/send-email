@@ -48,7 +48,7 @@ ${req.body.message}`;
         secure: false, // true for 465, false for other ports
         auth: {
             user: "jamebuddha@gmail.com", // generated ethereal user
-            pass: "bikidada", // generated ethereal password
+            pass: "", // generated ethereal password
         },
         //When using localhost
         tls: {
